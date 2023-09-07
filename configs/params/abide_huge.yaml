@@ -1,0 +1,33 @@
+network:
+  mm: byol+clf+mse
+  feature_dim: 1024
+  depth: 20
+  heads: 20
+  dim_feedforward: 3096
+  clf_mask: 10
+  mse_mask: 5
+
+saving:
+  log_dir: logs/log_RQ-params_large
+  checkpoint_dir: checkpoints/checkpoint_RQ-params_large
+  n_epochs: 100
+
+trainer:
+  batch_size: 64
+  m: 0.996 # momentum update
+  max_epochs: 5000
+  num_workers: 8
+  acc_lambda: 0.1
+  mse_lambda: 10
+  warmup_epochs: 10
+
+optimizer:
+  lr: 0.0003
+  weight_decay: 0.00005
+
+data:
+  path: /data5/yang/large/run1_abide1_train/
+  mask_way: mask
+  time_mask: 10
+  time_len: 30
+  

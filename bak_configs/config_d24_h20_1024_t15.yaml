@@ -1,0 +1,31 @@
+network:
+  feature_dim: 1024
+  depth: 24
+  heads: 16
+  dim_feedforward: 2048
+  # Specify a folder containing a pre-trained model to fine-tune. If training from scratch, pass None.
+  projection_head:
+    mlp_hidden_size: 512
+    projection_size: 128
+
+saving:
+  log_dir: output_log_alldata_d24_h16_1024_t15
+  checkpoint_dir: output_checkpoint_alldata_d24_h16_1024_t15
+  n_epochs: 10
+
+trainer:
+  batch_size: 32
+  m: 0.996 # momentum update
+  checkpoint_interval: 5000
+  max_epochs: 10000
+  num_workers: 8
+  acc_lambda: 0.1
+  mse_lambda: 1.0
+  warmup_epochs: 1
+
+optimizer:
+  lr: 0.0001
+  weight_decay: 0.00005
+
+data:
+  time_len: 15

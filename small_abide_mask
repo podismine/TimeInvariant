@@ -1,0 +1,98 @@
+/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/launch.py:180: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Init ddp
+Init ddp
+Init ddp
+Init ddp
+Finding files: 1114
+Finding files: 1114
+Finding files: 1114
+Finding files: 1114
+Model has parameters: 12.12894M
+Model has parameters: 12.12894M
+Model has parameters: 12.12894M
+Model has parameters: 12.12894M
+WARNING:torch.distributed.elastic.agent.server.api:Received 2 death signal, shutting down workers
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960690 closing signal SIGINT
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960691 closing signal SIGINT
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960692 closing signal SIGINT
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960693 closing signal SIGINT
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960690 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960691 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960692 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 2960693 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 709, in run
+    result = self._invoke_run(role)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 850, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 62, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 2960624 got signal: 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 716, in run
+    self._shutdown(e.sigval)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py", line 289, in _shutdown
+    self._pcontext.close(death_sig)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 332, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 709, in _close
+    handler.proc.wait(time_to_wait)
+  File "/data5/yang/anaconda3/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/data5/yang/anaconda3/lib/python3.9/subprocess.py", line 1911, in _wait
+    time.sleep(delay)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 62, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 2960624 got signal: 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data5/yang/anaconda3/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data5/yang/anaconda3/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/launch.py", line 195, in <module>
+    main()
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/launch.py", line 191, in main
+    launch(args)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/launch.py", line 176, in launch
+    run(args)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/run.py", line 753, in run
+    elastic_launch(
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 237, in launch_agent
+    result = agent.run()
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 721, in run
+    self._shutdown()
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py", line 289, in _shutdown
+    self._pcontext.close(death_sig)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 332, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 709, in _close
+    handler.proc.wait(time_to_wait)
+  File "/data5/yang/anaconda3/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/data5/yang/anaconda3/lib/python3.9/subprocess.py", line 1911, in _wait
+    time.sleep(delay)
+  File "/data5/yang/anaconda3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 62, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 2960624 got signal: 2

@@ -1,0 +1,50 @@
+======10======
+validation acc: 63.351 test acc: 60.432
+validation sen: 68.934 test sen: 60.809
+validation spe: 62.509 test spe: 60.390
+validation auc: 65.721 test auc: 60.599
+======15======
+validation acc: 63.351 test acc: 61.351
+validation sen: 68.028 test sen: 64.243
+validation spe: 62.575 test spe: 60.865
+validation auc: 65.301 test auc: 62.554
+======20======
+validation acc: 63.514 test acc: 61.081
+validation sen: 69.197 test sen: 63.190
+validation spe: 62.600 test spe: 60.703
+validation auc: 65.899 test auc: 61.947
+======25======
+validation acc: 63.351 test acc: 61.405
+validation sen: 68.897 test sen: 64.987
+validation spe: 62.450 test spe: 60.882
+validation auc: 65.674 test auc: 62.934
+======30======
+validation acc: 63.730 test acc: 61.243
+validation sen: 70.448 test sen: 63.444
+validation spe: 62.712 test spe: 60.843
+validation auc: 66.579 test auc: 62.142
+======35======
+validation acc: 63.135 test acc: 60.595
+validation sen: 68.128 test sen: 61.399
+validation spe: 62.337 test spe: 60.478
+validation auc: 65.233 test auc: 60.938
+======40======
+validation acc: 63.027 test acc: 61.459
+validation sen: 66.688 test sen: 65.058
+validation spe: 62.435 test spe: 60.914
+validation auc: 64.562 test auc: 62.986
+======45======
+validation acc: 63.892 test acc: 60.865
+validation sen: 70.979 test sen: 62.318
+validation spe: 62.783 test spe: 60.650
+validation auc: 66.881 test auc: 61.483
+======50======
+validation acc: 63.459 test acc: 61.135
+validation sen: 69.997 test sen: 62.505
+validation spe: 62.511 test spe: 60.839
+validation auc: 66.254 test auc: 61.672
+======55======
+validation acc: 63.135 test acc: 61.243
+validation sen: 68.737 test sen: 64.591
+validation spe: 62.303 test spe: 60.763
+validation auc: 65.519 test auc: 62.675

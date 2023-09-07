@@ -1,0 +1,28 @@
+network:
+  feature_dim: 1024
+  depth: 4
+  heads: 4
+  dim_feedforward: 1024
+  # Specify a folder containing a pre-trained model to fine-tune. If training from scratch, pass None.
+  projection_head:
+    mlp_hidden_size: 512
+    projection_size: 128
+
+saving:
+  log_dir: output_log_abide1_addMRM
+  checkpoint_dir: output_checkpoint_abide1_addMRM
+  n_epochs: 20
+
+trainer:
+  batch_size: 1024
+  m: 0.996 # momentum update
+  checkpoint_interval: 5000
+  max_epochs: 2000
+  num_workers: 4
+  acc_lambda: 1.0
+  mse_lambda: 1.0
+
+optimizer:
+
+  lr: 0.0003
+  weight_decay: 0.0001
